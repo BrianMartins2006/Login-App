@@ -8,4 +8,6 @@
     <string name="button_register">Cadastrar</string>
     <string name="button_forgot_pw">Esqueci a Senha</string>
     <string name="button_forgot_pw_clicked">Botão Esqueci a Senha Clicado!</string>
+    <string name="take_picture">Tirar Foto</string>
+    <string name="welcome_message">Bem Vindo</string>
 </resources>

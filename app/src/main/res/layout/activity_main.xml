@@ -55,14 +55,16 @@
         android:layout_marginEnd="@dimen/margin_right"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPWId">
+        app:layout_constraintTop_toBottomOf="@+id/textViewPWId"
+        app:endIconMode="password_toggle">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditLayoutPWId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/pw_senha_text_placeholder" />
+            android:hint="@string/pw_senha_text_placeholder"
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -74,6 +76,7 @@
         android:layout_marginEnd="@dimen/margin_right"
         android:text="@string/button_login"
         android:textAllCaps="true"
+        android:backgroundTint="@color/primary"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

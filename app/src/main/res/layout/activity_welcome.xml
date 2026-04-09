@@ -7,13 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
 
-    <TextView
-        android:id="@+id/textViewWecolmeTextId"
+    <Button
+        android:id="@+id/buttonTakePictureId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem Vindo"
+        android:text="@string/take_picture"
+        android:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="@dimen/margin_botton" />
+
+    <ImageView
+        android:id="@+id/imageViewPictureId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonTakePictureId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
