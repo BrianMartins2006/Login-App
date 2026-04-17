@@ -34,6 +34,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private static final int REQUEST_PICTURE_CODE = 987654;
     private static final String RESULT_KEY = "resultado";
+    private static final String IMAGE_KEY = "picture_user";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     Bitmap image = (Bitmap) extras.get("data");
                     imageViewPicture.setImageBitmap(image);
 
+                    resultIntent.putExtra(IMAGE_KEY, image);
                     resultIntent.putExtra(RESULT_KEY, "Bateu a foto.");
                 }
             }

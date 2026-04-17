@@ -1,11 +1,13 @@
 package br.edu.ifsuldeminas.mch.pdm.login;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -33,13 +35,22 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityResultLauncher<String> startWelcomeActLauncher =
             registerForActivityResult(new SimpleContract(),
-                    new ActivityResultCallback<String>() {
+                    new ActivityResultCallback<Intent>() {
                 @Override
-                public void onActivityResult(String result) {
-                    if (result == null || result.isBlank())
+                public void onActivityResult(Intent result) {
+                    if (result == null)
                         return;
 
-                    Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                    String msg = result.getStringExtra("resultado");
+                    Bitmap foto = result.getParcelableExtra("picture_user");
+
+                    if (foto != null){
+                        ImageView imageView = findViewById(R.id.imageViewUserPictureId);
+                        imageView.setImageBitmap(foto);
+                        imageView.setVisibility(View.VISIBLE);
+                    }
+
+                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
                 }
             });
 
