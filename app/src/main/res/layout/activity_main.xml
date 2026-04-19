@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.edu.ifsuldeminas.mch.pdm.login.MainActivity">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textViewUserId"
@@ -98,31 +98,27 @@
         android:id="@+id/buttonForgotPWId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/button_forgot_pw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRegisterId"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoginId"
         android:layout_marginTop="@dimen/margin_top"
         android:layout_marginEnd="@dimen/margin_right"
-        android:backgroundTint="@color/white"
-        android:text="@string/button_forgot_pw"
-        android:textAllCaps="true"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/buttonRegisterId"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLoginId" />
+        android:backgroundTint="@color/white"
+        android:textAllCaps="true" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageViewUserPictureId"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:scaleType="centerCrop"
-        android:visibility="gone"
-        android:layout_marginTop="@dimen/margin_top"
-        android:layout_marginEnd="@dimen/margin_left"
-        android:layout_marginStart="@dimen/margin_right"
-        android:layout_marginBottom="@dimen/margin_botton"
+        android:id="@+id/imageViewProfileId"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonForgotPWId"
-        app:shapeAppearanceOverlay="@style/CircleImage"
-        tools:src="@tools:sample/avatars"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegisterId"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginBottom="32dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

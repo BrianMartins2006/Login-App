@@ -1,14 +1,13 @@
 package br.edu.ifsuldeminas.mch.pdm.login;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
+import android.graphics.Bitmap;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultCallback;
@@ -17,8 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import br.edu.ifsuldeminas.mch.login.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,24 +32,18 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityResultLauncher<String> startWelcomeActLauncher =
             registerForActivityResult(new SimpleContract(),
-                    new ActivityResultCallback<Intent>() {
+                    new ActivityResultCallback<Bitmap>() {
                 @Override
-                public void onActivityResult(Intent result) {
+                public void onActivityResult(Bitmap result) {
                     if (result == null)
                         return;
 
-                    String msg = result.getStringExtra("resultado");
-                    Bitmap foto = result.getParcelableExtra("picture_user");
-
-                    if (foto != null){
-                        ImageView imageView = findViewById(R.id.imageViewUserPictureId);
-                        imageView.setImageBitmap(foto);
-                        imageView.setVisibility(View.VISIBLE);
-                    }
-
-                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+                    com.google.android.material.imageview.ShapeableImageView imageView = findViewById(R.id.imageViewProfileId);
+                    imageView.setImageBitmap(result);
+                    imageView.setVisibility(View.VISIBLE);
                 }
             });
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

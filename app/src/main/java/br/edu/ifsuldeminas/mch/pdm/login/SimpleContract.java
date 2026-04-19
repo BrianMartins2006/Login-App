@@ -9,7 +9,7 @@ import androidx.activity.result.contract.ActivityResultContract;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class SimpleContract extends ActivityResultContract<String, Intent> {
+public class SimpleContract extends ActivityResultContract<String, Bitmap> {
 
     @NonNull
     @Override
@@ -20,10 +20,10 @@ public class SimpleContract extends ActivityResultContract<String, Intent> {
     }
 
     @Override
-    public Intent parseResult(int resultCode, @Nullable Intent intent) {
+    public Bitmap parseResult(int resultCode, @Nullable Intent intent) {
         if (resultCode != Activity.RESULT_OK || intent == null)
             return null;
 
-        return intent;
+        return intent.getParcelableExtra("resultado");
     }
 }
